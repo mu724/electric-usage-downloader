@@ -1,0 +1,14 @@
+extract_days: 10
+smarthub:
+  api_url: https://novec.smarthub.coop
+  username: johndoe@gmail.com
+  password: smarthub_password
+  account: 1234567001
+  service_location: 123456
+  timezone: America/New_York
+influxdb:
+  host: https://localhost:8428
+  auth_token: johndoe:influx_password
+  org: ""
+  database: db_name
+  insecure: false
